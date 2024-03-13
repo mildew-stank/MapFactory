@@ -1,16 +1,7 @@
-﻿# TODO: dont allow duplicate lot names in campaign tree or rooms in room tree
-# TODO: dupe changes to name of lots between trees
-
-# TODO: see if out of service or not in use rooms can be sorted to bottom of list. if so remove Add Room and Remove and let it auto populate. otherwise consider having rooms bea  dropdown
-# TODO: ask before a file_date is overridden. this will also server as a date check/reminder
-# TODO: have date border be or flash green or red when it is not representing the current system clock day
-
-# TODO: add About(with version and github link, maybe cc liscence) never mind manual for now or help REMOVE THOSE
-# TODO: change settings>exprot path to export as...
-# TODO: have it so u set lot status in rooms but display it on campaigns too, and u can only set complete or not from campaign
-
-# TODO: QTreeWidget::item:has-children/open {margin-top: 3px; background:red;} maybe to separate rooms a bit
-# TODO: sometimes the drop indicator gets stuck on screen. log it out and see if event.accept() or .decline() helps. maybe force a render refresh somehow
+# TODO: consider a to lower visibity of out of service or not in use rooms
+# TODO: ask before an export is overridden
+# TODO: have date border be/flash green/red when not representing current system clock day
+# TODO: (bug) sometimes the drop indicator gets stuck on screen. log it out and see if event.accept()/decline() helps. maybe force a redraw
 
 
 import sys
@@ -213,6 +204,7 @@ class Factory(QMainWindow):
     def __init__(self):
         super(Factory, self).__init__()
         # data
+        self.version = "1.0.1"
         self.statuses = {
             "room": ["None", "Clean", "Dirty", "Not in use", "Out of service"],
             "lot": ["None", "Blended", "Completed", "Packaging", "Tableted", "Weighed"],
@@ -263,7 +255,7 @@ class Factory(QMainWindow):
         shortcut.activated.connect(self.on_delete_key)
 
     def on_about(self):
-        QMessageBox.about(self, "About", "<h1>Map Factory</h1> <h3>v1.0</h3> <a href='https://github.com/mildew-stank/MapFactory'>github.com/mildew-stank/MapFactory</a>")
+        QMessageBox.about(self, "About", f"<h1>Map Factory</h1> <h3>v{self.version}</h3> <a href='https://github.com/mildew-stank/MapFactory'>github.com/mildew-stank/MapFactory</a>")
 
     def on_delete_key(self):
         self.on_left_remove()
@@ -569,6 +561,7 @@ class Factory(QMainWindow):
         if spin_default is False:
             return
         spin_box = QSpinBoxNoWheelEvent()
+        spin_box.setMaximum(99999)
         spin_box.setValue(spin_default)
         tree.setItemWidget(item, 2, spin_box)
 

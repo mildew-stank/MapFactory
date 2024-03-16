@@ -29,21 +29,21 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
      showgrid="true"
-     inkscape:zoom="2.0538732"
-     inkscape:cx="388.5342"
-     inkscape:cy="306.25064"
+     inkscape:zoom="1.4523077"
+     inkscape:cx="637.60594"
+     inkscape:cy="298.14619"
      inkscape:window-width="2560"
      inkscape:window-height="1387"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer8">
+     inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
        id="grid239"
        spacingx="5"
        spacingy="5"
-       visible="false" />
+       visible="true" />
   </sodipodi:namedview>
   <g
      inkscape:groupmode="layer"
@@ -322,146 +322,6 @@
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2e7d32;fill-opacity:1;stroke:#2e7d32;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1">🗸</tspan><tspan
    style="fill:#2ecc71;fill-opacity:1;stroke-width:1;stroke-dasharray:none"
    id="tspan10041"> </tspan>Completed</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="784.862"
-       y="277.42599"
-       id="text7802"><tspan
-         sodipodi:role="line"
-         x="784.862"
-         y="277.42599"
-         id="tspan7804"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1">Clean Equipment</tspan><tspan
-         sodipodi:role="line"
-         x="784.862"
-         y="289.42599"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1"
-         id="tspan10349">Storage</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="855"
-       y="115"
-       id="text10407"><tspan
-         sodipodi:role="line"
-         id="tspan10405"
-         x="855"
-         y="115">Office</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="599.92798"
-       y="238.42599"
-       id="text10407-4"><tspan
-         sodipodi:role="line"
-         id="tspan10405-8"
-         x="599.92798"
-         y="238.42599">Production Gowning</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="564.664"
-       y="309.41"
-       id="text10407-1"><tspan
-         sodipodi:role="line"
-         id="tspan10405-43"
-         x="564.664"
-         y="309.41">Male</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="634.664"
-       y="309.41"
-       id="text10407-8"><tspan
-         sodipodi:role="line"
-         id="tspan10405-5"
-         x="634.664"
-         y="309.41">Female</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="750"
-       y="115"
-       id="text10407-6"><tspan
-         sodipodi:role="line"
-         id="tspan10405-2"
-         x="750"
-         y="115">Press</tspan><tspan
-         sodipodi:role="line"
-         x="750"
-         y="127.00001"
-         id="tspan10467">Setup</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="695"
-       y="115"
-       id="text10407-7"><tspan
-         sodipodi:role="line"
-         id="tspan10405-4"
-         x="695"
-         y="115">Sat Lab</tspan><tspan
-         sodipodi:role="line"
-         x="695"
-         y="127"
-         id="tspan10486">2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="805"
-       y="115"
-       id="text10407-9"><tspan
-         sodipodi:role="line"
-         id="tspan10405-3"
-         x="805"
-         y="115">Press</tspan><tspan
-         sodipodi:role="line"
-         x="805"
-         y="127"
-         id="tspan10438">Tooling</tspan><tspan
-         sodipodi:role="line"
-         x="805"
-         y="139"
-         id="tspan10436">Storage</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="1120.2581"
-       y="96.994003"
-       id="text10407-3"><tspan
-         sodipodi:role="line"
-         id="tspan10405-0"
-         x="1120.2581"
-         y="96.994003">Water</tspan><tspan
-         sodipodi:role="line"
-         x="1120.2581"
-         y="108.994"
-         id="tspan11231">System</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="1145.012"
-       y="603.45203"
-       id="text10407-38"><tspan
-         sodipodi:role="line"
-         id="tspan10405-29"
-         x="1145.012"
-         y="603.45203">Sat Lab</tspan><tspan
-         sodipodi:role="line"
-         x="1145.012"
-         y="615.45203"
-         id="tspan11250">1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12px;line-height:1;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle"
-       x="1205.522"
-       y="563.42603"
-       id="text10407-74"><tspan
-         sodipodi:role="line"
-         id="tspan10405-7"
-         x="1205.522"
-         y="563.42603">Visitor Gowning</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -583,211 +443,11 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Airlocks"
-     style="display:inline">
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1011"
-       width="40"
-       height="40"
-       x="100"
-       y="120" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1013"
-       width="40"
-       height="40"
-       x="210"
-       y="120" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1015"
-       width="40"
-       height="40"
-       x="250"
-       y="120" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1017"
-       width="40"
-       height="40"
-       x="440"
-       y="120" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1019"
-       width="40"
-       height="40"
-       x="530"
-       y="120" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1021"
-       width="40"
-       height="40"
-       x="1150"
-       y="120" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1023"
-       width="40"
-       height="40"
-       x="1030"
-       y="210" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1025"
-       width="40"
-       height="40"
-       x="1110"
-       y="210" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1027"
-       width="40"
-       height="40"
-       x="1110"
-       y="320" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1029"
-       width="40"
-       height="40"
-       x="1030"
-       y="390" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1031"
-       width="40"
-       height="40"
-       x="1110"
-       y="500" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1033"
-       width="40"
-       height="40"
-       x="1030"
-       y="500" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1035"
-       width="40"
-       height="40"
-       x="1070"
-       y="580" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1037"
-       width="40"
-       height="40"
-       x="390"
-       y="210" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1039"
-       width="40"
-       height="40"
-       x="350"
-       y="210" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1041"
-       width="40"
-       height="40"
-       x="210"
-       y="210" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect1043"
-       width="40"
-       height="40"
-       x="100"
-       y="210" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.2488372"
-       id="rect3003"
-       width="40"
-       height="60"
-       x="880"
-       y="280" />
-  </g>
+     style="display:inline" />
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="Airlock Doors">
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 105,120 h 30"
-       id="path2861" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 105,250 h 30"
-       id="path2863" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 215,120 h 30"
-       id="path2865" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 215,250 h 30"
-       id="path2867" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 255,120 h 30"
-       id="path2869" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 355,250 h 30"
-       id="path2871" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 395,250 h 30"
-       id="path2873" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 445,120 h 30"
-       id="path2875" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 570,125 v 30"
-       id="path2877" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 885,280 h 30"
-       id="path2879" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 1155,120 h 30"
-       id="path2881" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 1030,215 v 30"
-       id="path2883" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 1150,215 v 30"
-       id="path2885" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 1150,325 v 30"
-       id="path2887" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 1030,395 v 30"
-       id="path2889" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 1150,505 v 30"
-       id="path2891" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 1030,505 v 30"
-       id="path2893" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.49767441;stroke-dasharray:none"
-       d="m 1075,620 h 30"
-       id="path2895" />
-  </g>
+     inkscape:label="Airlock Doors" />
   <g
      inkscape:groupmode="layer"
      id="layer1"
@@ -831,38 +491,38 @@
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect911"
-       width="50"
-       height="80"
+       width="49.692871"
+       height="139.69289"
        x="670"
-       y="80" />
+       y="20" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect913"
-       width="60"
-       height="110"
+       width="59.879089"
+       height="139.87912"
        x="720"
-       y="50" />
+       y="20" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect915"
-       width="50"
-       height="80"
+       width="49.692871"
+       height="139.6929"
        x="780"
-       y="80" />
+       y="20" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect917"
-       width="50"
-       height="80"
+       width="49.692871"
+       height="139.6929"
        x="830"
-       y="80" />
+       y="20" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect919"
-       width="40"
-       height="60"
+       width="39.727722"
+       height="99.727753"
        x="880"
-       y="80" />
+       y="40" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect921"
@@ -877,20 +537,6 @@
        height="70"
        x="990"
        y="40" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       id="rect925"
-       width="40"
-       height="50"
-       x="990"
-       y="110" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       id="rect927"
-       width="60"
-       height="50"
-       x="1030"
-       y="110" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect929"
@@ -999,10 +645,10 @@
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect959"
-       width="50"
-       height="60"
-       x="480"
-       y="30" />
+       width="52"
+       height="2.1533303e-11"
+       x="479"
+       y="20" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect961"
@@ -1026,39 +672,11 @@
        y="540" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       id="rect967"
-       width="70"
-       height="50"
-       x="1110"
-       y="580" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       id="rect969"
-       width="130"
-       height="40"
-       x="1150"
-       y="540" />
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        id="rect971"
        width="120"
-       height="90"
+       height="60"
        x="990"
        y="580" />
-    <rect
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-linecap:square;stroke-linejoin:miter;stroke-opacity:1;stroke-width:2;stroke-dasharray:none"
-       id="rect12047"
-       width="70"
-       height="90"
-       x="530"
-       y="260" />
-    <rect
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-       id="rect12205"
-       width="70"
-       height="90"
-       x="600"
-       y="260" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1156,21 +774,12 @@
        id="path2656" />
     <path
        style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="m 1030,135 v 20"
-       id="path2658"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
        d="m 995,160 h 30"
        id="path2660" />
     <path
        style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
        d="m 1105,160 h 30"
        id="path2662" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="m 1105,40 h 30"
-       id="path2664" />
     <path
        style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
        d="m 1155,160 h 30"
@@ -1221,45 +830,7 @@
        id="path2688" />
     <path
        style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="m 1115,580 h 15"
-       id="path2690"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="M 1150,575 V 560"
-       id="path2692"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
        d="m 885,340 h 30"
        id="path2694" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="M 665,210 H 650"
-       id="path2696" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="m 490,90 h 30"
-       id="path2698" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="m 490,30 h 30"
-       id="path2700" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="m 605,260 h 15"
-       id="path12270" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="M 595,260 H 580"
-       id="path12686" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="m 605,350 h 15"
-       id="path12688" />
-    <path
-       style="fill:none;stroke:#e67e22;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"
-       d="M 595,350 H 580"
-       id="path12690" />
   </g>
 </svg>

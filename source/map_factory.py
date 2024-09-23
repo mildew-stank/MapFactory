@@ -1,7 +1,7 @@
-# TODO: consider a to lower visibity of out of service or not in use rooms
+# TODO: consider the lowering visibity of out of service or not in use rooms
 # TODO: ask before an export is overridden
 # TODO: have date border be/flash green/red when not representing current system clock day
-# TODO: (bug) sometimes the drop indicator gets stuck on screen. log it out and see if event.accept()/decline() helps. maybe force a redraw
+# TODO: (possible bug) sometimes the drop indicator may get stuck on screen. log it out and see if event.accept()/decline() helps. maybe force a redraw
 
 
 import sys
@@ -204,7 +204,7 @@ class Factory(QMainWindow):
     def __init__(self):
         super(Factory, self).__init__()
         # data
-        self.version = "1.0.1"
+        self.version = "1.1.1"
         self.statuses = {
             "room": ["None", "Clean", "Dirty", "Not in use", "Out of service"],
             "lot": ["None", "Blended", "Completed", "Packaging", "Tableted", "Weighed"],
@@ -212,6 +212,7 @@ class Factory(QMainWindow):
         self.settings = {
             "save_path": "save.json",
             "export_path": "exports",
+            "auto_sort_enabled": True,
         }
         self.map_display = None
         self.is_programmed_change = False
@@ -229,6 +230,7 @@ class Factory(QMainWindow):
         self.clear_action.triggered.connect(self.on_clear)
         self.export_path_action.triggered.connect(self.on_export_path)
         self.about_action.triggered.connect(self.on_about)
+        self.sort_action.triggered.connect(self.on_sort)
         # left tree
         self.left_tree.itemSelectionChanged.connect(self.on_left_tree_selected)
         self.left_tree.itemChanged.connect(self.on_left_tree_item_changed)
@@ -244,6 +246,7 @@ class Factory(QMainWindow):
         # final rendering
         self.setWindowIcon(QIcon("facbot.ico"))
         self.read_settings()
+        self.set_up_sort_action()
         data = self.load_data(self.settings["save_path"])
         try:
             self.populate_data(data)
@@ -256,6 +259,19 @@ class Factory(QMainWindow):
 
     def on_about(self):
         QMessageBox.about(self, "About", f"<h1>Map Factory</h1> <h3>v{self.version}</h3> <a href='https://github.com/mildew-stank/MapFactory'>github.com/mildew-stank/MapFactory</a>")
+
+    def set_up_sort_action(self):
+        is_enabled = True
+        if "auto_sort_enabled" in self.settings:
+            is_enabled = self.settings["auto_sort_enabled"]
+            print(self.settings["auto_sort_enabled"])
+        self.sort_action.setChecked(is_enabled)
+        self.on_sort(is_enabled)
+
+    def on_sort(self, is_checked):
+        self.left_tree.setSortingEnabled(is_checked)
+        self.right_tree.setSortingEnabled(is_checked)
+        self.settings["auto_sort_enabled"] = is_checked
 
     def on_delete_key(self):
         self.on_left_remove()
@@ -370,7 +386,6 @@ class Factory(QMainWindow):
 
     def on_save(self):
         data = self.trees_to_object()
-        bb = os.path.basename(self.settings["save_path"])  ##
         with open(self.settings["save_path"], "w") as out_file:
             json.dump(data, out_file, indent=4)
 

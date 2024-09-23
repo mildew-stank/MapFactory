@@ -1,557 +1,276 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1261</width>
-    <height>650</height>
+    <width>720</width>
+    <height>540</height>
    </rect>
   </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>1261</width>
-    <height>650</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1261</width>
-    <height>650</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>Map</string>
+   <string>MapFactory</string>
   </property>
-  <widget class="QLabel" name="map">
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <property name="leftMargin">
+     <number>9</number>
+    </property>
+    <property name="topMargin">
+     <number>9</number>
+    </property>
+    <property name="rightMargin">
+     <number>9</number>
+    </property>
+    <property name="bottomMargin">
+     <number>9</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTreeWidget" name="left_tree">
+        <property name="dragDropMode">
+         <enum>QAbstractItemView::DragOnly</enum>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="headerShowSortIndicator" stdset="0">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>Campaign</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Status</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QPushButton" name="add_campaign_button">
+          <property name="text">
+           <string>Add Campaign</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="add_lot_button">
+          <property name="text">
+           <string>Add Lot</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="remove_button">
+          <property name="text">
+           <string>Remove</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="color_button">
+          <property name="text">
+           <string>Color</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QTreeWidget" name="right_tree">
+        <property name="dragDropMode">
+         <enum>QAbstractItemView::DropOnly</enum>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="headerShowSortIndicator" stdset="0">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>Room</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Status</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Shipper</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2,1">
+        <item>
+         <widget class="QPushButton" name="add_room_button">
+          <property name="text">
+           <string>Add Room</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>80</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QDateEdit" name="date_edit">
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="buttonSymbols">
+           <enum>QAbstractSpinBox::NoButtons</enum>
+          </property>
+          <property name="date">
+           <date>
+            <year>2024</year>
+            <month>1</month>
+            <day>1</day>
+           </date>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1261</width>
-     <height>650</height>
+     <width>720</width>
+     <height>21</height>
     </rect>
    </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>ProductionFloorBlank.png</pixmap>
-   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="open_action"/>
+    <addaction name="save_action"/>
+    <addaction name="save_as_action"/>
+    <addaction name="export_action"/>
+    <addaction name="separator"/>
+    <addaction name="clear_action"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="export_path_action"/>
+    <addaction name="sort_action"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="about_action"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuHelp"/>
   </widget>
-  <widget class="QLabel" name="room_332">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>40</y>
-     <width>100</width>
-     <height>120</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="save_action">
    <property name="text">
-    <string>332</string>
+    <string>Save</string>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
-   <property name="wordWrap">
+  </action>
+  <action name="export_action">
+   <property name="text">
+    <string>Export</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="open_action">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="clear_action">
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </action>
+  <action name="save_as_action">
+   <property name="text">
+    <string>Save As...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="export_path_action">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-  </widget>
-  <widget class="QLabel" name="room_331">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>40</y>
-     <width>90</width>
-     <height>120</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
    <property name="text">
-    <string>331</string>
+    <string>Export Path...</string>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+  </action>
+  <action name="about_action">
+   <property name="text">
+    <string>About</string>
    </property>
-   <property name="wordWrap">
+  </action>
+  <action name="manual_action">
+   <property name="text">
+    <string>Manual</string>
+   </property>
+  </action>
+  <action name="sort_action">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-  </widget>
-  <widget class="QLabel" name="room_330">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>40</y>
-     <width>120</width>
-     <height>120</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>330</string>
-   </property>
-   <property name="scaledContents">
-    <bool>false</bool>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
+   <property name="checked">
     <bool>true</bool>
    </property>
-  </widget>
-  <widget class="QLabel" name="room_329">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>40</y>
-     <width>70</width>
-     <height>120</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
    <property name="text">
-    <string>329</string>
+    <string>Auto Sort</string>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_327">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>40</y>
-     <width>120</width>
-     <height>120</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>327</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_325">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>250</y>
-     <width>100</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>325</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_324">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>250</y>
-     <width>90</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>324</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_323">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>250</y>
-     <width>120</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>323</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_322">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>250</y>
-     <width>70</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>322</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_141">
-   <property name="geometry">
-    <rect>
-     <x>930</x>
-     <y>60</y>
-     <width>50</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>141</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_139">
-   <property name="geometry">
-    <rect>
-     <x>1000</x>
-     <y>60</y>
-     <width>80</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>139</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_136">
-   <property name="geometry">
-    <rect>
-     <x>1160</x>
-     <y>60</y>
-     <width>90</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>136</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_142">
-   <property name="geometry">
-    <rect>
-     <x>1160</x>
-     <y>230</y>
-     <width>90</width>
-     <height>90</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>142</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_146">
-   <property name="geometry">
-    <rect>
-     <x>1160</x>
-     <y>340</y>
-     <width>90</width>
-     <height>90</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>144</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_148">
-   <property name="geometry">
-    <rect>
-     <x>1160</x>
-     <y>450</y>
-     <width>90</width>
-     <height>90</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>146</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_147">
-   <property name="geometry">
-    <rect>
-     <x>930</x>
-     <y>450</y>
-     <width>130</width>
-     <height>90</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>147</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_145">
-   <property name="geometry">
-    <rect>
-     <x>930</x>
-     <y>340</y>
-     <width>130</width>
-     <height>90</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>145</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_143">
-   <property name="geometry">
-    <rect>
-     <x>930</x>
-     <y>230</y>
-     <width>130</width>
-     <height>90</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>143</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="room_118">
-   <property name="geometry">
-    <rect>
-     <x>1000</x>
-     <y>600</y>
-     <width>60</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-    </font>
-   </property>
-   <property name="text">
-    <string>118</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="campaigns">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>400</y>
-     <width>780</width>
-     <height>250</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>campaigns</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="date">
-   <property name="geometry">
-    <rect>
-     <x>379</x>
-     <y>620</y>
-     <width>251</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Verdana</family>
-     <pointsize>16</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>date</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignHCenter|Qt::AlignTop</set>
-   </property>
-  </widget>
+  </action>
  </widget>
  <resources/>
  <connections/>

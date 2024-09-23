@@ -1,7 +1,7 @@
-# TODO: consider the lowering visibity of out of service or not in use rooms
+# TODO: consider a to lower visibity of out of service or not in use rooms
 # TODO: ask before an export is overridden
 # TODO: have date border be/flash green/red when not representing current system clock day
-# TODO: (possible bug) sometimes the drop indicator may get stuck on screen. log it out and see if event.accept()/decline() helps. maybe force a redraw
+# TODO: (bug) sometimes the drop indicator gets stuck on screen. log it out and see if event.accept()/decline() helps. maybe force a redraw
 
 
 import sys
@@ -222,6 +222,7 @@ class Factory(QMainWindow):
         self.left_tree.header().resizeSection(0, 173)
         self.left_tree.header().setSortIndicator(0, 0)
         self.right_tree.header().setSortIndicator(0, 0)
+        #self.right_tree.header().setSortIndicatorShown(False)
         # menu bar
         self.open_action.triggered.connect(self.on_open)
         self.save_action.triggered.connect(self.on_save)
@@ -264,7 +265,6 @@ class Factory(QMainWindow):
         is_enabled = True
         if "auto_sort_enabled" in self.settings:
             is_enabled = self.settings["auto_sort_enabled"]
-            print(self.settings["auto_sort_enabled"])
         self.sort_action.setChecked(is_enabled)
         self.on_sort(is_enabled)
 
@@ -272,6 +272,9 @@ class Factory(QMainWindow):
         self.left_tree.setSortingEnabled(is_checked)
         self.right_tree.setSortingEnabled(is_checked)
         self.settings["auto_sort_enabled"] = is_checked
+        # enabling sorting also sets the indicator to be shown, but i don't want that
+        self.left_tree.header().setSortIndicatorShown(False)
+        self.right_tree.header().setSortIndicatorShown(False)
 
     def on_delete_key(self):
         self.on_left_remove()

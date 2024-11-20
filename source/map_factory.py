@@ -1,7 +1,5 @@
-# TODO: consider a to lower visibity of out of service or not in use rooms
-# TODO: ask before an export is overridden
+# TODO: add option to lower visibity of out of service or not in use rooms
 # TODO: have date border be/flash green/red when not representing current system clock day
-# TODO: (bug) sometimes the drop indicator gets stuck on screen. log it out and see if event.accept()/decline() helps. maybe force a redraw
 
 
 import sys
@@ -80,25 +78,16 @@ class Map(QDialog):
             "Out of service": "#c62828",
         }
         uic.loadUi("map.ui", self)
-        icon = QIcon("facbot.ico")
+        self.icon = QIcon("facbot.ico")
         self.setWindowFlags(self.windowFlags() & ~QtCore.Qt.WindowContextHelpButtonHint)
-        self.setWindowIcon(icon)
+        self.setWindowIcon(self.icon)
         self.populate_map()
         self.date.setText(self.data["date"])
         self.show()
+        self.tray = QSystemTrayIcon()
         # export map
         # TODO: find an onload signal/event. showEvent isn't it
         QTimer.singleShot(250, self.screenshot)
-        # show export notification
-        self.tray = QSystemTrayIcon()
-        self.tray.setIcon(icon)
-        self.tray.show()
-        self.tray.showMessage("Map Factory", "Image saved", icon, 5000)
-        self.tray.messageClicked.connect(self.on_message_clicked)
-        self.tray.activated.connect(self.on_message_clicked)
-        # i'd like to hide the tray icon or never show it, but these prevent tray/notification signals
-        # self.tray.hide()
-        # self.tray.setVisible(False)
 
     def on_message_clicked(self):
         os.startfile(self.export_path)
@@ -109,7 +98,25 @@ class Map(QDialog):
         screen = QApplication.primaryScreen()
         export = screen.grabWindow(self.winId())
         date = self.data["date"].replace("/", "-")
+        if os.path.isfile(f"{self.export_path}/ProductionFloor_{date}.png"):
+            buttons = QMessageBox.Save | QMessageBox.Cancel
+            prompt = QMessageBox.question(
+                self, "Confirmation", f"Overwrite ProductionFloor_{date}.png?", buttons
+            )
+            if prompt == QMessageBox.Cancel:
+                return
+        self.system_notification()
         export.save(f"{self.export_path}/ProductionFloor_{date}.png", "png")
+
+    def system_notification(self):
+        self.tray.setIcon(self.icon)
+        self.tray.show()
+        self.tray.showMessage("Map Factory", "Image saved", self.icon, 5000)
+        self.tray.messageClicked.connect(self.on_message_clicked)
+        self.tray.activated.connect(self.on_message_clicked)
+        # i'd like to hide the tray icon or never show it, but these prevent tray/notification signals
+        # self.tray.hide()
+        # self.tray.setVisible(False)
 
     def populate_map(self):
         label_dict = self.labels_to_dict()
@@ -204,7 +211,7 @@ class Factory(QMainWindow):
     def __init__(self):
         super(Factory, self).__init__()
         # data
-        self.version = "1.1.0"
+        self.version = "1.2.0"
         self.statuses = {
             "room": ["None", "Clean", "Dirty", "Not in use", "Out of service"],
             "lot": ["None", "Blended", "Completed", "Packaging", "Tableted", "Weighed"],

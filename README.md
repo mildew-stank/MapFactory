@@ -2,4 +2,4 @@
 
 <h1 align="center">Usage</h1>
 <img align="left" height="420" src="https://i.imgur.com/2XpJaBp.png">
-This is business software meant to aid inventory documentation at a particular facility.
+This is business software meant to aid inventory documentation at a particular facility. When provided with a floor plan and accompanying _map.ui_ file it can overlay logged information to the map and export as PNG.

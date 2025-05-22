@@ -1,7 +1,3 @@
-# TODO: add option to lower visibity of out of service or not in use rooms
-# TODO: have date border be/flash green/red when not representing current system clock day
-
-
 import sys
 import os
 import json
@@ -57,8 +53,8 @@ def Lot(name, color, status):
     return {"name": name, "color": color, "status": status}
 
 
-def Room(name, status, shipping, lots):
-    return {"name": name, "status": status, "shipping": shipping, "lots": lots}
+def Room(name, status, current, maximum, press, lots):
+    return {"name": name, "status": status, "shipping": current, "maximum": maximum, "press": press, "lots": lots}
 
 
 class Map(QDialog):
@@ -77,7 +73,11 @@ class Map(QDialog):
             "Not in use": "#c62828",
             "Out of service": "#c62828",
         }
-        uic.loadUi("map.ui", self)
+        try:
+            uic.loadUi("map.ui", self)
+        except FileNotFoundError:
+            QMessageBox.critical(self, "Error", "The UI file 'map.ui' is missing. Please ensure it is in the root directory.")
+            sys.exit(1)
         self.icon = QIcon("facbot.ico")
         self.setWindowFlags(self.windowFlags() & ~QtCore.Qt.WindowContextHelpButtonHint)
         self.setWindowIcon(self.icon)
@@ -126,7 +126,9 @@ class Map(QDialog):
     def populate_rooms(self, label_dict):
         for room in self.data["rooms"]:
             lots = room["lots"]
-            room_shipping = room["shipping"]
+            room_current = room["shipping"]
+            room_max = room["maximum"]
+            room_press = room["press"]
             room_text = ""
             room_status = room["status"]
             campaign_name = ""
@@ -154,8 +156,10 @@ class Map(QDialog):
                 room_status_color = self.status_colors[room_status]
             if room_status and not room_status == "None":
                 room_text = f"{room_text}<div style='color:{room_status_color};font-weight:bold;'>{room_status}</div>"
-            if room_shipping:
-                room_text = f"{room_text}<div style='color:black;text-decoration:underline;'>Shipper: {room_shipping}</div>"
+            if room_current:
+                room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Progress: {round((room_current / room_max) * 100)}%</div>"
+            if room_max:
+                room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Press: {room_press}</div>"
             label_dict[room_name].setText(room_text)
 
     def populate_campaigns(self, label_dict):
@@ -211,7 +215,7 @@ class Factory(QMainWindow):
     def __init__(self):
         super(Factory, self).__init__()
         # data
-        self.version = "1.2.0"
+        self.version = "1.3.0"
         self.statuses = {
             "room": ["None", "Clean", "Dirty", "Not in use", "Out of service"],
             "lot": ["None", "Blended", "Completed", "Packaging", "Tableted", "Weighed"],
@@ -258,8 +262,8 @@ class Factory(QMainWindow):
         data = self.load_data(self.settings["save_path"])
         try:
             self.populate_data(data)
-        except:
-            QMessageBox.warning(self, "Error", "Failed to load save.")
+        except KeyError:
+            QMessageBox.warning(self, "Error", "Failed to load save due to missing or invalid keys.")
         self.show()
         # shortcuts
         shortcut = QShortcut(QKeySequence.Delete, self)
@@ -326,8 +330,8 @@ class Factory(QMainWindow):
         data = self.load_data(file_path)
         try:
             self.populate_data(data)
-        except:
-            QMessageBox.warning(self, "Error", "Failed to load save.")
+        except KeyError:
+            QMessageBox.warning(self, "Error", "Failed to load save due to missing or invalid keys.")
 
     def write_settings(self):
         with open("settings.json", "w") as out_file:
@@ -345,8 +349,8 @@ class Factory(QMainWindow):
         try:
             with open(file_path, "r") as in_file:
                 return json.load(in_file)
-        except:
-            # file must be missing or in use or is just a directory
+        except (OSError, json.JSONDecodeError) as e:
+            QMessageBox.warning(self, "Error", f"Failed to load data: {e}")
             return
 
     def populate_data(self, data):
@@ -376,6 +380,8 @@ class Factory(QMainWindow):
                 self.statuses["room"],
                 room["status"],
                 room["shipping"],
+                room["maximum"],
+                room["press"]
             )
             for lot in room["lots"]:
                 self.load_lot(room_item, lot["name"], lot["color"])
@@ -543,7 +549,7 @@ class Factory(QMainWindow):
 
     def on_add_room(self):
         item = self.add_top_level_item(self.right_tree, "New Room", "", True)
-        self.add_widgets_to_item(item, self.statuses["room"], "None", 0)
+        self.add_widgets_to_item(item, self.statuses["room"], "None", 0, 0, 0)
 
     def add_top_level_item(self, tree, name, color, select):
         # create item, enable editing, disable dragging, set color, add to tree, expand if requested, return item.
@@ -558,7 +564,7 @@ class Factory(QMainWindow):
             tree.editItem(item, 0)
         return item
 
-    def add_widgets_to_item(self, item, combo_list, combo_default, spin_default=False):
+    def add_widgets_to_item(self, item, combo_list, combo_default, spin1_default=False, spin2_default=False, spin3_default=False):
         tree = item.treeWidget()
         # create combobox
         combo_box = QComboBoxNoWheelEvent(self)
@@ -583,12 +589,21 @@ class Factory(QMainWindow):
         # add combobox
         tree.setItemWidget(item, 1, combo_box)
         # create and add spinbox if desired
-        if spin_default is False:
-            return
-        spin_box = QSpinBoxNoWheelEvent()
-        spin_box.setMaximum(99999)
-        spin_box.setValue(spin_default)
-        tree.setItemWidget(item, 2, spin_box)
+        if spin1_default is not False:
+            spin_box1 = QSpinBoxNoWheelEvent()
+            spin_box1.setMaximum(99999)
+            spin_box1.setValue(spin1_default)
+            tree.setItemWidget(item, 2, spin_box1)
+        if spin2_default is not False:
+            spin_box2 = QSpinBoxNoWheelEvent()
+            spin_box2.setMaximum(99999)
+            spin_box2.setValue(spin2_default)
+            tree.setItemWidget(item, 3, spin_box2)
+        if spin3_default is not False:
+            spin_box3 = QSpinBoxNoWheelEvent()
+            spin_box3.setMaximum(99999)
+            spin_box3.setValue(spin3_default)
+            tree.setItemWidget(item, 4, spin_box3)
 
     def remove_right(self):
         right = self.right_tree
@@ -609,9 +624,13 @@ class Factory(QMainWindow):
             else:
                 combo_box = tree.itemWidget(top_level_item, 1)
                 status = combo_box.currentText()
-                spin_box = tree.itemWidget(top_level_item, 2)
-                shipping = spin_box.value()
-                top_level_items.append(Room(name, status, shipping, lots))
+                current_spin_box = tree.itemWidget(top_level_item, 2)
+                current = current_spin_box.value()
+                max_spin_box = tree.itemWidget(top_level_item, 3)
+                maximum = max_spin_box.value()
+                press_spin_box = tree.itemWidget(top_level_item, 4)
+                press = press_spin_box.value()
+                top_level_items.append(Room(name, status, current, maximum, press, lots))
         return top_level_items
 
     def lots_to_objects(self, top_level_item, include_status):

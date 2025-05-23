@@ -270,9 +270,9 @@
    <property name="geometry">
     <rect>
      <x>930</x>
-     <y>42</y>
+     <y>60</y>
      <width>50</width>
-     <height>118</height>
+     <height>100</height>
     </rect>
    </property>
    <property name="font">
@@ -449,8 +449,7 @@
     </font>
    </property>
    <property name="text">
-    <string>145
-</string>
+    <string>145</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>

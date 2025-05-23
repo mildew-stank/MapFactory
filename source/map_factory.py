@@ -156,9 +156,13 @@ class Map(QDialog):
                 room_status_color = self.status_colors[room_status]
             if room_status and not room_status == "None":
                 room_text = f"{room_text}<div style='color:{room_status_color};font-weight:bold;'>{room_status}</div>"
-            if room_current:
+            if room_current and room_max:
                 room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Progress: {round((room_current / room_max) * 100)}%</div>"
-            if room_max:
+            elif room_current:
+                room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Shipper: {room_current}</div>"
+            elif room_max:
+                room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Target: {room_max}</div>"
+            if room_press:
                 room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Press: {room_press}</div>"
             label_dict[room_name].setText(room_text)
 
@@ -215,7 +219,7 @@ class Factory(QMainWindow):
     def __init__(self):
         super(Factory, self).__init__()
         # data
-        self.version = "1.3.0"
+        self.version = "1.3.1"
         self.statuses = {
             "room": ["None", "Clean", "Dirty", "Not in use", "Out of service"],
             "lot": ["None", "Blended", "Completed", "Packaging", "Tableted", "Weighed"],

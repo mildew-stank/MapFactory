@@ -58,7 +58,7 @@ def Room(name, status, current, maximum, press, lots):
 
 
 class Map(QDialog):
-    def __init__(self, data, export_path):
+    def __init__(self, data, export_path, dark_mode = False):
         super(Map, self).__init__()
         self.data = data
         self.export_path = export_path
@@ -73,6 +73,12 @@ class Map(QDialog):
             "Not in use": "#c62828",
             "Out of service": "#c62828",
         }
+        self.default_colors = {
+            "Dark": "#e7e7e7",
+            "Light": "#000000",
+        }
+        self.default_color = self.default_colors["Dark"] if dark_mode else self.default_colors["Light"]
+        print(self.default_color, "HERE", dark_mode)
         try:
             uic.loadUi("map.ui", self)
         except FileNotFoundError:
@@ -139,6 +145,8 @@ class Map(QDialog):
             for lot in lots:
                 lot_name = lot["name"]
                 lot_color = lot["color"]
+                if lot_color == "#000000":
+                    lot_color = self.default_color
                 # check the campaign these lots are from
                 campaign, campaign_lot = self.find_lot_in_campaign(lot_name)
                 if not campaign and not campaign_lot:
@@ -157,13 +165,13 @@ class Map(QDialog):
             if room_status and not room_status == "None":
                 room_text = f"{room_text}<div style='color:{room_status_color};font-weight:bold;'>{room_status}</div>"
             if room_current and room_max:
-                room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Progress: {round((room_current / room_max) * 100)}%</div>"
+                room_text = f"{room_text}<div style='color:{self.default_color};font-weight:bold;'>Progress: {round((room_current / room_max) * 100)}%</div>"
             elif room_current:
-                room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Shipper: {room_current}</div>"
+                room_text = f"{room_text}<div style='color:{self.default_color};font-weight:bold;'>Shipper: {room_current}</div>"
             elif room_max:
-                room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Target: {room_max}</div>"
+                room_text = f"{room_text}<div style='color:{self.default_color};font-weight:bold;'>Target: {room_max}</div>"
             if room_press:
-                room_text = f"{room_text}<div style='color:black;font-weight:bold;'>Press: {room_press}</div>"
+                room_text = f"{room_text}<div style='color:{self.default_color};font-weight:bold;'>Press: {room_press}</div>"
             label_dict[room_name].setText(room_text)
 
     def populate_campaigns(self, label_dict):
@@ -178,6 +186,8 @@ class Map(QDialog):
             for lot in campaign["lots"]:
                 lot_name = lot["name"]
                 lot_color = lot["color"]
+                if lot_color == "#000000":
+                    lot_color = self.default_color
                 lot_status = self.get_status_symbol(lot["status"])
                 campaign_text = f"{campaign_text}<div style='color:{lot_color};'>{lot_name}{lot_status}</div>"
             # end campaign block
@@ -219,7 +229,7 @@ class Factory(QMainWindow):
     def __init__(self):
         super(Factory, self).__init__()
         # data
-        self.version = "1.3.1"
+        self.version = "1.3.2"
         self.statuses = {
             "room": ["None", "Clean", "Dirty", "Not in use", "Out of service"],
             "lot": ["None", "Blended", "Completed", "Packaging", "Tableted", "Weighed"],
@@ -228,6 +238,7 @@ class Factory(QMainWindow):
             "save_path": "save.json",
             "export_path": "exports",
             "auto_sort_enabled": True,
+            "dark_mode": False,
         }
         self.map_display = None
         self.is_programmed_change = False
@@ -414,7 +425,8 @@ class Factory(QMainWindow):
             if self.map_display:
                 self.map_display.accept()
             data = self.trees_to_object()
-            self.map_display = Map(data, self.settings["export_path"])
+            mode = self.settings.get("dark_mode", False)
+            self.map_display = Map(data, self.settings["export_path"], mode)
             self.map_display.exec_()
         except:
             QMessageBox.warning(self, "Error", "Export failed.")

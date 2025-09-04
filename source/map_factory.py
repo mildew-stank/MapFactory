@@ -78,7 +78,6 @@ class Map(QDialog):
             "Light": "#000000",
         }
         self.default_color = self.default_colors["Dark"] if dark_mode else self.default_colors["Light"]
-        print(self.default_color, "HERE", dark_mode)
         try:
             uic.loadUi("map.ui", self)
         except FileNotFoundError:
@@ -154,6 +153,8 @@ class Map(QDialog):
                 if not campaign["name"] == campaign_name:
                     campaign_name = campaign["name"]
                     campaign_color = campaign["color"]
+                    if campaign_color == "#000000":
+                        campaign_color = self.default_color
                     campaign_words = campaign_name.replace("<br>", " ").split()
                     room_text = f"{room_text}<div style='color:{campaign_color};text-decoration:underline;'>{campaign_words[0]}</div>"
                 lot_status = self.get_status_symbol(campaign_lot["status"])
@@ -180,6 +181,8 @@ class Map(QDialog):
         for campaign in self.data["campaigns"]:
             campaign_name = campaign["name"]
             campaign_color = campaign["color"]
+            if campaign_color == "#000000":
+                campaign_color = self.default_color
             campaign_text = campaign_text + "<td style='padding-right:8px;'>"
             # start campaign block
             campaign_text = f"{campaign_text}<div style='color:{campaign_color};text-decoration:underline;'>{campaign_name}</div>"
@@ -198,7 +201,7 @@ class Map(QDialog):
 
     def get_status_symbol(self, status):
         lot_status_text = status
-        lot_status_color = "#000000"
+        lot_status_color = self.default_color
         if lot_status_text in self.status_colors:
             lot_status_color = self.status_colors[lot_status_text]
         lot_status_symbol = "🗸" if lot_status_text == "Completed" else "⬤"

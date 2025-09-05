@@ -87,7 +87,8 @@ class Map(QDialog):
         self.setWindowFlags(self.windowFlags() & ~QtCore.Qt.WindowContextHelpButtonHint)
         self.setWindowIcon(self.icon)
         self.populate_map()
-        self.date.setText(self.data["date"])
+        date_text = f"<div style='color:{self.default_color};'>{self.data['date']}</div>"
+        self.date.setText(date_text)
         self.show()
         self.tray = QSystemTrayIcon()
         # export map
@@ -232,7 +233,7 @@ class Factory(QMainWindow):
     def __init__(self):
         super(Factory, self).__init__()
         # data
-        self.version = "1.3.2"
+        self.version = "1.3.3"
         self.statuses = {
             "room": ["None", "Clean", "Dirty", "Not in use", "Out of service"],
             "lot": ["None", "Blended", "Completed", "Packaging", "Tableted", "Weighed"],
